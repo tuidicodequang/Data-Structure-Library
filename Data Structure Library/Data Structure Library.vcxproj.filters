@@ -18,5 +18,13 @@
     <ClCompile Include="Data Structure Library.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stacklib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stacklib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
