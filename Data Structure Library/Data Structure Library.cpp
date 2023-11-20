@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "stacklib.h"
-
-int main() {
+#include "queueLib.h"
+void teststack() {
     // Tạo một đối tượng Stack
     Stack stack(5);
 
@@ -25,7 +25,7 @@ int main() {
     std::cout << std::endl;
     delete[] arr;
 
-   
+
 
     // Kiểm tra xem Stack đã đầy chưa
     if (stack.IsFull()) {
@@ -67,5 +67,46 @@ int main() {
         std::cout << "Stack khong doi xung" << std::endl;
     }
 
+}
+void testqueue() {
+    QueueLib<int> intQueue;
+
+    // Thêm phần tử vào hàng đợi
+    intQueue.enqueue(5);
+    intQueue.enqueue(10);
+    intQueue.enqueue(15);
+
+    //Hiển thị hàng đợi
+    std::cout << "Hang doi hien tai la: ";
+    intQueue.display();
+
+    //Đảo hàng đợi
+    std::cout << "Hang doi sau khi dao nguoc  la: ";
+    intQueue.reverse();
+    intQueue.display();
+
+    // Hiển thị phần tử đầu tiên của hàng đợi
+    std::cout << "Phan tu dau tien cua hang doi: " << intQueue.front() << std::endl;
+
+    // Xóa phần tử đầu tiên khỏi hàng đợi
+    intQueue.dequeue();
+
+    // Hiển thị phần tử đầu tiên sau khi xóa
+    std::cout << "Phan tu dau tien cua hang doi (sau khi xoa): " << intQueue.front() << std::endl;
+
+    // Kiểm tra xem hàng đợi có trống không
+    if (intQueue.empty()) {
+        std::cout << "hang doi rong." << std::endl;
+    }
+    else {
+        std::cout << "Hang doi khong rong." << std::endl;
+    }
+
+    // Hiển thị kích thước của hàng đợi
+    std::cout << "Kich thuoc hang doi:  " << intQueue.size() << std::endl;
+}
+int main() {
+    //teststack();
+    //testqueue();
     return 0;
 }

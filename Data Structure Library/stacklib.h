@@ -1,78 +1,80 @@
-#ifndef STACKLIB_H
+﻿#ifndef STACKLIB_H
 #define STACKLIB_H
 
 #include <iostream>
 
-// �?nh ngh?a l?p Stack
+// định nghĩa lớp stack
 class Stack {
 private:
-    int* data;      // M?ng l�u tr? c�c ph?n t? trong stack
-    int capacity;   // S?c ch?a c?a stack
-    int top;        // Ch? s? �?nh c?a stack
+    int* data;      // Mảng lưu trữ các phần tử trong stack
+    int capacity;   // Sức chứa của stack
+    int top;        // Ch? số đỉnh của stack
 
 public:
-    // Kh?i t?o stack v?i s?c ch?a cho tr�?c
+    // khởi tạo 1 stack với sức chứa cho trước
     Stack(int capacity);
 
-    // H?y b? stack v� gi?i ph�ng b? nh?
+    // Hủy bỏ stack và giải phóng bộ nhớ
     ~Stack();
 
-    // Th�m m?t ph?n t? v�o �?nh stack
+    // Thêm một phần tử vào đỉnh của stack
     void Push(int element);
 
-    // Lo?i b? ph?n t? tr�n �?nh stack
+    // loại bỏ phần tử trên đỉnh stack
     void Pop();
 
-    // Truy c?p ph?n t? tr�n �?nh stack m� kh�ng lo?i b? n�
+    // Truy cập phần tử trên đỉnh stack mà không loại bỏ nó
     int Top() const;
 
-    // Ki?m tra xem stack c� r?ng kh�ng
+    // Kiểm tra xem stack có rỗng không
     bool IsEmpty() const;
 
-    // Tr? v? s? l�?ng ph?n t? hi?n t?i trong stack
+    // Trả về số lượnng phần tử hiện tại của stack
     int Size() const;
 
-    // X�a t?t c? c�c ph?n t? trong stack
+    // Xóa tất cả các phần tử  trong stack
     void Clear();
-    // T?o m?t b?n sao c?a stack
+
+    // tạo bản sao của stack
     Stack(const Stack& other);
 
-    // G�n gi� tr? c?a m?t stack cho stack kh�c
+    // Gán giá trị của một stack cho stack khác
     Stack& operator=(const Stack& other);
 
-    // So s�nh hai stack c� b?ng nhau hay kh�ng
+    // So sánh hai stack có bằng nhau hay không
     bool operator==(const Stack& other) const;
 
-    // So s�nh hai stack c� kh�c nhau hay kh�ng
+    // So sánh hai stack có khác nhau hay không
     bool operator!=(const Stack& other) const;
 
-    // Chuy?n �?i stack th�nh m?t m?ng
+    // Chuyển đổi stack thành một mảng
     int* ToArray();
-    // In ra t?t c? c�c ph?n t? trong stack
+
+    // In ra tất cả các phần tử trong stack
     void PrintStack();
 
-    // Ki?m tra xem stack �? �?y ch�a
+    // Kiểm tra xem stack đầy  chưa
     bool IsFull() const;
 
-    // Thay �?i s?c ch?a c?a stack
+    // Thay đổi sức chứa củaa stack
     void Resize(int newCapacity);
 
-    // L?y t?t c? c�c ph?n t? trong stack
+    // Lấy tất cả các phần tử trong stack
     int* GetAllElements();
 
-    // X�a m?t ph?n t? trong stack d?a tr�n ch? s?
+    // Xóa một phần tử trong stack dựa trên chỉ số
     void RemoveByIndex(int index);
 
-    // �?o ng�?c th? t? c�c ph?n t? trong stack
+    // đảo ngược thứ tự các phần tử trong stack
     void Reverse();
 
-    // Ki?m tra xem stack c� �?i x?ng kh�ng
+    // kiểm tra xem stack có đối xứng không
     bool IsSymmetric() const;
 
-    // T?o m?t b?n sao �?o ng�?c c?a stack
+    // Tạo 1 bản sau đảo ngược của stack
     Stack ReverseCopy() const;
 
-    // Chuy?n �?i stack th�nh queue
+    // chuyển đổi stack thành queue
     //Queue ConvertToQueue() const;
 };
 

@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Data Structure Library.cpp" />
+    <ClCompile Include="queuelib.cpp" />
     <ClCompile Include="stacklib.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="queuelib.h" />
     <ClInclude Include="stacklib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

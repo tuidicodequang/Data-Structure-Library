@@ -21,9 +21,15 @@
     <ClCompile Include="stacklib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="queuelib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stacklib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="queuelib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

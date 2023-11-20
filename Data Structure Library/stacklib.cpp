@@ -1,20 +1,20 @@
-#include "stacklib.h"
+﻿#include "stacklib.h"
 
-// �?nh ngh?a c�c ph��ng th?c c?a l?p Stack
+// Định nghĩa lớp stack và các phương thức
 
-// Kh?i t?o stack v?i s?c ch?a cho tr�?c
+// khởi tạo stack với sức chứa cho trước
 Stack::Stack(int capacity) {
     this->capacity = capacity;
     data = new int[capacity];
-    top = -1;   // Kh?i t?o �?nh stack l� -1 �? ��nh d?u stack r?ng
+    top = -1;   // khởi tạo đỉnh của stack là -1 để đánh dấu stack rỗng
 }
 
-// H?y b? stack v� gi?i ph�ng b? nh?
+// Hủy bỏ stack 
 Stack::~Stack() {
     delete[] data;
 }
 
-// Th�m m?t ph?n t? v�o �?nh stack
+// Thêm một phần tử vào đỉnh stack
 void Stack::Push(int element) {
     if (top == capacity - 1) {
         std::cout << "Stack overflow!\n";
@@ -24,7 +24,7 @@ void Stack::Push(int element) {
     data[top] = element;
 }
 
-// Lo?i b? ph?n t? tr�n �?nh stack
+// loại bỏ phần tử trên đỉnh stack
 void Stack::Pop() {
     if (IsEmpty()) {
         std::cout << "Stack is empty!\n";
@@ -33,7 +33,7 @@ void Stack::Pop() {
     top--;
 }
 
-// Truy c?p ph?n t? tr�n �?nh stack m� kh�ng lo?i b? n�
+// Truy cập phần tử trên đỉnh stack mà không loại bỏ nó
 int Stack::Top() const {
     if (IsEmpty()) {
         std::cout << "Stack is empty!\n";
@@ -42,21 +42,21 @@ int Stack::Top() const {
     return data[top];
 }
 
-// Ki?m tra xem stack c� r?ng kh�ng
+// Kiểm tra rỗng
 bool Stack::IsEmpty() const {
     return (top == -1);
 }
 
-// Tr? v? s? l�?ng ph?n t? hi?n t?i trong stack
+// Trả về số lượnng phần tử hiện tại của stack
 int Stack::Size() const {
     return (top + 1);
 }
 
-// X�a t?t c? c�c ph?n t? trong stack
+// Xóa tất cả các phần tử  trong stack
 void Stack::Clear() {
-    top = -1;   // ��nh d?u stack r?ng b?ng c�ch �?t �?nh l� -1
+    top = -1;   // Đánh dấu stack rỗng bằng cách đặt đỉnh là -1
 }
-// T?o m?t b?n sao c?a stack
+// tạo bản sao của stack
 Stack::Stack(const Stack& other) {
     capacity = other.capacity;
     top = other.top;
@@ -66,7 +66,7 @@ Stack::Stack(const Stack& other) {
     }
 }
 
-// G�n gi� tr? c?a m?t stack cho stack kh�c
+// Gán giá trị của một stack cho stack khác
 Stack& Stack::operator=(const Stack& other) {
     if (this != &other) {
         delete[] data;
@@ -80,7 +80,7 @@ Stack& Stack::operator=(const Stack& other) {
     return *this;
 }
 
-// So s�nh hai stack c� b?ng nhau hay kh�ng
+// So sánh hai stack có b?ng nhau hay không
 bool Stack::operator==(const Stack& other) const {
     if (top != other.top) {
         return false;
@@ -93,12 +93,12 @@ bool Stack::operator==(const Stack& other) const {
     return true;
 }
 
-// So s�nh hai stack c� kh�c nhau hay kh�ng
+// So sánh hai stack có khác nhau hay không
 bool Stack::operator!=(const Stack& other) const {
     return !(*this == other);
 }
 
-// Chuy?n �?i stack th�nh m?t m?ng
+// Chuyển đổi stack thành một mảng
 int* Stack::ToArray() {
     int* arr = new int[top + 1];
     for (int i = 0; i <= top; i++) {
@@ -106,7 +106,7 @@ int* Stack::ToArray() {
     }
     return arr;
  }
-// In ra t?t c? c�c ph?n t? trong stack
+// In ra tất cả các phần tử trong stack
 void Stack::PrintStack() {
     if (IsEmpty()) {
         std::cout << "Stack is empty!\n";
@@ -118,12 +118,12 @@ void Stack::PrintStack() {
     std::cout << std::endl;
 }
 
-// Ki?m tra xem stack �? �?y ch�a
+// Kiểm tra xem stack đầy  chưa
 bool Stack::IsFull() const {
     return (top == capacity - 1);
 }
 
-// Thay �?i s?c ch?a c?a stack
+// Thay đổi sức chứa củaa stack
 void Stack::Resize(int newCapacity) {
     if (newCapacity <= 0) {
         std::cout << "Invalid capacity!\n";
@@ -144,7 +144,7 @@ void Stack::Resize(int newCapacity) {
     }
 }
 
-// L?y t?t c? c�c ph?n t? trong stack
+// Lấy tất cả các phần tử trong stack
 int* Stack::GetAllElements() {
     int* arr = new int[top + 1];
     for (int i = 0; i <= top; i++) {
@@ -153,7 +153,7 @@ int* Stack::GetAllElements() {
     return arr;
 }
 
-// X�a m?t ph?n t? trong stack d?a tr�n ch? s?
+// Xóa một phần tử trong stack dựa trên chỉ số
 void Stack::RemoveByIndex(int index) {
     if (index < 0 || index > top) {
         std::cout << "Invalid index!\n";
@@ -166,7 +166,7 @@ void Stack::RemoveByIndex(int index) {
     top--;
 }
 
-// �?o ng�?c th? t? c�c ph?n t? trong stack
+// Đảo ngược phần tử trong stack
 void Stack::Reverse() {
     int start = 0;
     int end = top;
@@ -179,7 +179,7 @@ void Stack::Reverse() {
     }
 }
 
-// Ki?m tra xem stack c� �?i x?ng kh�ng
+// kiểm tra đối xứng
 bool Stack::IsSymmetric() const {
     int start = 0;
     int end = top;
@@ -193,24 +193,24 @@ bool Stack::IsSymmetric() const {
     return true;
 }
 Stack Stack::ReverseCopy() const {
-    Stack reversedStack(capacity);  // T?o m?t Stack m?i �? l�u tr? b?n sao �?o ng�?c
-    int* tempData = new int[top + 1];  // T?o m?t m?ng t?m �? sao ch�p d? li?u hi?n t?i c?a Stack
+    Stack reversedStack(capacity);  //tạo một mảng để lưu giá trị đảo ngược
+    int* tempData = new int[top + 1];  // Tạo một mảng tạm để lưu trữ dữ liệu hiện tại của stack
 
-    // Sao ch�p d? li?u t? Stack hi?n t?i v�o m?ng t?m
+    // Sao chép dữ liệu hiện tại vào mảng tạm
     for (int i = 0; i <= top; i++) {
         tempData[i] = data[i];
     }
 
-    // �?y c�c ph?n t? t? cu?i �?n �?u v�o reversedStack
+    // Đẩy các phần tử từ cuối đến đầu vào reversedStack
     for (int i = top; i >= 0; i--) {
         reversedStack.Push(tempData[i]);
     }
 
-    delete[] tempData;  // Gi?i ph�ng b? nh? c?a m?ng t?m
+    delete[] tempData;  // Giải phóng bộ nhớ mảng tạm
 
-    return reversedStack;  // Tr? v? b?n sao �?o ng�?c c?a Stack
+    return reversedStack;  // trả về bản sao đảo ngược của stack
 }
-/* // Chuy?n �?i stack th�nh queue
+/* // Chuyểnn đổi stack thành queue
 Queue Stack::ConvertToQueue() const {
     Queue queue(capacity);
     int* elements = new int[top + 1];
