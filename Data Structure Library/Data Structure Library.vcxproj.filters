@@ -24,12 +24,18 @@
     <ClCompile Include="queuelib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkedListlib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stacklib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="queuelib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedListlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "stacklib.h"
 #include "queueLib.h"
+#include "LinkedListlib.h"
 void teststack() {
     // Tạo một đối tượng Stack
     Stack stack(5);
@@ -105,8 +106,73 @@ void testqueue() {
     // Hiển thị kích thước của hàng đợi
     std::cout << "Kich thuoc hang doi:  " << intQueue.size() << std::endl;
 }
+void testLinkList() {
+    LinkedList myList;
+
+    // Tạo danh sách liên kết
+    myList.CreateList();
+
+    // Thêm các phần tử vào danh sách
+    Node* node1 = myList.CreateNode(10);
+    Node* node2 = myList.CreateNode(20);
+    Node* node3 = myList.CreateNode(30);
+    Node* node4 = myList.CreateNode(40);
+
+    myList.AddHead(node1);
+    myList.AddTail(node2);
+    myList.InsertAfterQ(node3, node1);
+    myList.InsertBeforeP(node4, node2);
+
+    // Xuất danh sách
+    std::cout << "Danh sach lien ket ban dau: ";
+    if (myList.Length() > 0) {
+        myList.PrintList();
+    }
+    else {
+        std::cout << "Danh sach rong." << std::endl;
+    }
+
+    // Xóa phần tử đầu danh sách
+    int removedData;
+   if (myList.RemoveHead(removedData) == 0) {
+        std::cout << "Danh sach sau khi xoa phan tu dau: ";
+        myList.PrintList();
+    } 
+
+    // Xóa phần tử cuối danh sách
+    if (myList.RemoveTail(removedData) == 0) {
+        std::cout << "Danh sach sau khi xoa phan tu cuoi: ";
+        myList.PrintList();
+    }
+
+    // Đảo ngược danh sách
+    myList.ReverseList();
+    std::cout << "Danh sach sau khi dao nguoc: ";
+    myList.PrintList();
+
+    // Lấy phần tử tại một chỉ mục cụ thể
+    Node* retrievedNode = myList.GetNode(1);
+    if (retrievedNode != nullptr) {
+        std::cout << "Phan tu tai chi muc 1: " << retrievedNode->data << std::endl;
+    }
+
+    // Tìm kiếm một Node có dữ liệu cho trước
+    Node* searchedNode = myList.Search(20);
+    if (searchedNode != nullptr) {
+        std::cout << "Tim thay Node co du lieu 20" << std::endl;
+    }
+
+    // Độ dài của danh sách
+    int length = myList.Length();
+    std::cout << "Do dai cua danh sach: " << length << std::endl;
+
+    // Hủy bỏ danh sách
+    myList.DestroyList();
+    std::cout << "Danh sach da duoc huy bo." << std::endl;
+}
 int main() {
     //teststack();
     //testqueue();
+    testLinkList();
     return 0;
 }

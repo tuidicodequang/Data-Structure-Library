@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Data Structure Library.cpp" />
+    <ClCompile Include="LinkedListlib.cpp" />
     <ClCompile Include="queuelib.cpp" />
     <ClCompile Include="stacklib.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedListlib.h" />
     <ClInclude Include="queuelib.h" />
     <ClInclude Include="stacklib.h" />
   </ItemGroup>
