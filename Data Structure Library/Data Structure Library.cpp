@@ -170,9 +170,11 @@ void testLinkList() {
     myList.DestroyList();
     std::cout << "Danh sach da duoc huy bo." << std::endl;
 }
+void testTree(){}
+void testGraph(){}
 int main() {
     //teststack();
     //testqueue();
-    testLinkList();
+    //testLinkList();
     return 0;
 }

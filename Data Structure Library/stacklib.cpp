@@ -210,16 +210,3 @@ Stack Stack::ReverseCopy() const {
 
     return reversedStack;  // trả về bản sao đảo ngược của stack
 }
-/* // Chuyểnn đổi stack thành queue
-Queue Stack::ConvertToQueue() const {
-    Queue queue(capacity);
-    int* elements = new int[top + 1];
-    for (int i = 0; i <= top; i++) {
-        elements[i] = data[i];
-    }
-    for (int i = top; i >= 0; i--) {
-        queue.Enqueue(elements[i]);
-    }
-    delete[] elements;
-    return queue;
-}*/

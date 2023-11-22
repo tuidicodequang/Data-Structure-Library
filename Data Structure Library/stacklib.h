@@ -74,8 +74,7 @@ public:
     // Tạo 1 bản sau đảo ngược của stack
     Stack ReverseCopy() const;
 
-    // chuyển đổi stack thành queue
-    //Queue ConvertToQueue() const;
+ 
 };
 
 #endif
