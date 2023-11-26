@@ -130,12 +130,16 @@
     <ClCompile Include="Data Structure Library.cpp" />
     <ClCompile Include="LinkedListlib.cpp" />
     <ClCompile Include="queuelib.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="stacklib.cpp" />
+    <ClCompile Include="Treelib.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graphlib.h" />
     <ClInclude Include="LinkedListlib.h" />
     <ClInclude Include="queuelib.h" />
     <ClInclude Include="stacklib.h" />
+    <ClInclude Include="Treelib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
