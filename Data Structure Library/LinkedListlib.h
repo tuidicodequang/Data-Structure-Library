@@ -36,7 +36,7 @@ public:
     void PrintList();                        // In ra các phần tử trong danh sách
     Node* Search(int x);                     // Tìm kiếm một Node có dữ liệu cho trước
     int Length();                            // Độ dài của danh sách
-    void DestroyList();                      // Hủy bỏ toàn bộ danh sách
+    void DestroyList();                      // Hủy bỏ toàn bộ danh 
 };
 
 #endif

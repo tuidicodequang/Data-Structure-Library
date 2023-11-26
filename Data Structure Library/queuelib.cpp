@@ -42,11 +42,6 @@ void QueueLib<T>::push(const T& element) {
 }
 
 template <typename T>
-void QueueLib<T>::pop() {
-    dequeue();
-}
-
-template <typename T>
 T& QueueLib<T>::front() {
     return frontPtr->data;
 }

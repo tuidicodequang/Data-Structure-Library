@@ -144,7 +144,7 @@ void BST::PrintChildren(int key)
 		cout << "Parent node= " << Ptr->key << endl;
 		Ptr->left == NULL ?
 			cout << "Left Child = NULL" << endl :
-			cout << "Left Chile = " << Ptr->left->key << endl;
+			cout << "Left Child = " << Ptr->left->key << endl;
 		Ptr->right == NULL ?
 			cout << "Right Child = NULL" << endl :
 			cout << "Right Child = " << Ptr->right->key << endl;

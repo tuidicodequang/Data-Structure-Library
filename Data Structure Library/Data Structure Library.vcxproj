@@ -130,7 +130,7 @@
     <ClCompile Include="Data Structure Library.cpp" />
     <ClCompile Include="LinkedListlib.cpp" />
     <ClCompile Include="queuelib.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="stacklib.cpp" />
     <ClCompile Include="Treelib.cpp" />
   </ItemGroup>

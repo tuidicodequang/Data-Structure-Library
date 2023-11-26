@@ -108,7 +108,7 @@ void testqueue() {
     // Hiển thị kích thước của hàng đợi
     std::cout << "Kich thuoc hang doi:  " << intQueue.size() << std::endl;
 }
-void testLinkList() {
+void testLinkedList() {
     LinkedList myList;
 
     // Tạo danh sách liên kết
@@ -172,8 +172,11 @@ void testLinkList() {
     myList.DestroyList();
     std::cout << "Danh sach da duoc huy bo." << std::endl;
 }
-void testTree(){
+void testTree() {
+    // Khởi tạo cây nhị phân tìm kiếm
     BST myTree;
+
+    // Thêm node vào cây
     cout << "Them node vao cay" << endl;
     myTree.AddLeaf(myTree.root, 10);
     myTree.AddLeaf(myTree.root, 5);
@@ -183,47 +186,57 @@ void testTree(){
     myTree.AddLeaf(myTree.root, 12);
     myTree.AddLeaf(myTree.root, 17);
 
-    cout << "Inorder Traversal: ";
+    // Duyệt cây theo thứ tự Inorder
+    cout << "Duyet theo Inorder: ";
     myTree.InorderTraversal(myTree.root);
     cout << endl;
 
-    cout << "Preorder Traversal: ";
+    // Duyệt cây theo thứ tự Preorder
+    cout << "Duyet theo Preorder: ";
     myTree.PreorderTraversal(myTree.root);
     cout << endl;
 
-    cout << "Postorder Traversal: ";
+    // Duyệt cây theo thứ tự Postorder
+    cout << "Duyet theo Postorder: ";
     myTree.PostorderTraversal(myTree.root);
     cout << endl;
 
+    // Tìm node có giá trị là 7
     int keyToFind = 7;
     BST::node* foundNode = myTree.ReturnNode(myTree.root, keyToFind);
     if (foundNode != NULL)
     {
-        cout << "Node " << keyToFind << " tim thay" << endl;
+        cout << "Node " << keyToFind << " Duoc tim thay" << endl;
     }
     else
     {
-        cout << "Node " << keyToFind << " khong tim thay" << endl;
+        cout << "Node " << keyToFind << " khong duoc tim thay" << endl;
     }
 
+    // In giá trị của node gốc
     cout << "Node goc: " << myTree.ReturnRootKey() << endl;
 
+    // In các node con của node có giá trị là 5
     int keyToPrintChildren = 5;
     cout << "Cac node con cua " << keyToPrintChildren << ":" << endl;
     myTree.PrintChildren(keyToPrintChildren);
 
+    // In giá trị của node nhỏ nhất và lớn nhất trong cây
     cout << "Node nho nhat: " << myTree.FindSmallest(myTree.root) << endl;
     cout << "Node lon nhat: " << myTree.FindBiggest(myTree.root) << endl;
 
+    // Xóa node có giá trị là 10
     int keyToRemove = 10;
     cout << "Xoa node " << keyToRemove << endl;
     myTree.RemoveNode(myTree.root, keyToRemove);
 
-    cout << "Inorder Traversal sau khi xoa: ";
+    // Duyệt cây Inorder sau khi xóa
+    cout << "Duyet theo thu tu Inorder sau khi xoa: ";
     myTree.InorderTraversal(myTree.root);
     cout << endl;
 
-    cout << "Tree Height: " << myTree.TreeHeight(myTree.root) << endl;
+    // In chiều cao của cây
+    cout << "Chieu cao cua cay: " << myTree.TreeHeight(myTree.root) << endl;
 }
 void testGraph(){
     //Tạo đồ thị vô hướng không trọng số
@@ -337,7 +350,7 @@ void testGraph(){
 int main() {
     //teststack();
     //testqueue();
-    //testLinkList();
+    //testLinkedList();
     //testTree();
     testGraph();
     return 0;
